@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class SecretEntrance {
+public class Day_1_SecretEntrance {
 
     public static void main(String[] args) throws IOException {
 

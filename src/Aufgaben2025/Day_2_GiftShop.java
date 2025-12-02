@@ -1,13 +1,12 @@
 package Aufgaben2025;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class GiftShop {
+public class Day_2_GiftShop {
 
 
     public static void main(String[] args) throws IOException {
