@@ -9,7 +9,7 @@ public class Day_2_GiftShop {
 
     /**
      * Entfernt alle Zeichen, die keine Ziffern sind (und optional ein führendes Minus).
-     * Damit fangen wir z.B. BOM (﻿) oder andere Steuerzeichen ab.
+     * Fängt z.B. ein BOM (﻿) oder andere Steuerzeichen ab.
      */
     public static String cleanNumberString(String s) {
 
@@ -47,10 +47,11 @@ public class Day_2_GiftShop {
     }
 
     /**
-     * Prüft, ob eine ID "ungültig" ist, also aus einem Block besteht,
-     * der genau zweimal hintereinander vorkommt (z.B. 11, 6464, 123123).
+     * Part 1:
+     * Ungültig, wenn die ID aus einem Block besteht,
+     * der GENAU zweimal hintereinander vorkommt (z.B. 11, 6464, 123123).
      */
-    public static boolean isInvalidId(String string) {
+    public static boolean isInvalidIdPart1(String string) {
 
         if (string == null || string.length() == 0) {
             return false;
@@ -80,6 +81,70 @@ public class Day_2_GiftShop {
         String temp2 = stringBuilder2.toString();
 
         return temp1.equals(temp2);
+    }
+
+    /**
+     * Part 2:
+     * Ungültig, wenn die ID nur aus einem Block besteht,
+     * der mindestens zweimal hintereinander vorkommt.
+     *
+     * Beispiele:
+     *  - 12341234  → "1234" 2x
+     *  - 123123123 → "123"  3x
+     *  - 1212121212 → "12"  5x
+     *  - 1111111   → "1"    7x
+     */
+    public static boolean isInvalidIdPart2(String string) {
+
+        if (string == null || string.length() == 0) {
+            return false;
+        }
+
+        int length = string.length();
+
+        // Blocklänge kann maximal die Hälfte der Gesamtlänge sein
+        for (int blockLen = 1; blockLen <= length / 2; blockLen++) {
+
+            // Die Gesamtlänge muss ein Vielfaches der Blocklänge sein
+            if (length % blockLen != 0) {
+                continue;
+            }
+
+            int repeats = length / blockLen;
+            if (repeats < 2) {
+                continue; // zur Sicherheit, sollte eh nie passieren
+            }
+
+            // Block aus den ersten blockLen Zeichen aufbauen
+            StringBuilder blockBuilder = new StringBuilder();
+            for (int i = 0; i < blockLen; i++) {
+                blockBuilder.append(string.charAt(i));
+            }
+            String block = blockBuilder.toString();
+
+            // Prüfen, ob der gesamte String nur aus diesem Block besteht
+            boolean allMatch = true;
+            int pos = 0;
+
+            for (int r = 0; r < repeats; r++) {
+                for (int j = 0; j < blockLen; j++) {
+                    if (string.charAt(pos + j) != block.charAt(j)) {
+                        allMatch = false;
+                        break;
+                    }
+                }
+                if (!allMatch) {
+                    break;
+                }
+                pos += blockLen;
+            }
+
+            if (allMatch) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     /**
@@ -193,7 +258,8 @@ public class Day_2_GiftShop {
 
         ArrayList<String> listOfAllIds = splitRanges(allIds);
 
-        long result = 0L;
+        long resultPart1 = 0L;
+        long resultPart2 = 0L;
 
         for (int i = 0; i < listOfAllIds.size(); i++) {
 
@@ -206,14 +272,21 @@ public class Day_2_GiftShop {
             for (int j = 0; j < idsInRange.size(); j++) {
                 String idString = idsInRange.get(j);
 
-                if (isInvalidId(idString)) {
-                    // ID selbst ist ein String nur aus Ziffern → Long.parseLong reicht hier
+                // Part 1: genau 2x wiederholt
+                if (isInvalidIdPart1(idString)) {
                     long idValue = Long.parseLong(idString);
-                    result += idValue;
+                    resultPart1 += idValue;
+                }
+
+                // Part 2: irgendein Block mindestens 2x wiederholt
+                if (isInvalidIdPart2(idString)) {
+                    long idValue = Long.parseLong(idString);
+                    resultPart2 += idValue;
                 }
             }
         }
 
-        System.out.println(result);
+        System.out.println("Part 1 (genau 2x wiederholt):  " + resultPart1);
+        System.out.println("Part 2 (mindestens 2x):        " + resultPart2);
     }
 }
