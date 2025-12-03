@@ -1,0 +1,251 @@
+Index: src/Aufgaben2025/GiftShop.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Aufgaben2025/GiftShop.java b/src/Aufgaben2025/Day_2_GiftShop.java
+rename from src/Aufgaben2025/GiftShop.java
+rename to src/Aufgaben2025/Day_2_GiftShop.java
+--- a/src/Aufgaben2025/GiftShop.java	(revision 97866937a0aa90792bee5135febe4fd5ba3aed76)
++++ b/src/Aufgaben2025/Day_2_GiftShop.java	(date 1764668658289)
+@@ -1,13 +1,12 @@
+ package Aufgaben2025;
+ 
+ import java.io.BufferedReader;
+-import java.io.FileNotFoundException;
+ import java.io.FileReader;
+ import java.io.IOException;
+ import java.util.ArrayList;
+ import java.util.Scanner;
+ 
+-public class GiftShop {
++public class Day_2_GiftShop {
+ 
+ 
+     public static void main(String[] args) throws IOException {
+@@ -16,18 +15,19 @@
+         BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Sebi\\Downloads\\AdventOfCode_InvalidIDs.csv"));
+         String allIds = br.readLine().trim();
+ 
+-        String[] listOfAllIds = new String[allIds.length()];
++        ArrayList<String> listOfAllIds = new ArrayList<>();
+         ArrayList<Integer> safeIndex = new ArrayList<>();
+         for (int i = 0; i < allIds.length(); i++) {
+             if (!allIds.matches(",")) {
+                 safeIndex.add(i);
+             } else {
+-                for (int j = safeIndex.getFirst(); i < safeIndex.getLast(); i++) {
+-                    listOfAllIds[0] = listOfAllIds[0] + allIds.charAt(j);
++                for (int j = safeIndex.getFirst(); j < safeIndex.getLast(); j++) {
++
+                 }
+             }
+         }
+ 
++//        System.out.println(Arrays.toString(listOfAllIds));
+ 
+ 
+ 
+Index: src/Aufgaben2025/SecretEntrance.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Aufgaben2025/SecretEntrance.java b/src/Aufgaben2025/Day_1_SecretEntrance.java
+rename from src/Aufgaben2025/SecretEntrance.java
+rename to src/Aufgaben2025/Day_1_SecretEntrance.java
+--- a/src/Aufgaben2025/SecretEntrance.java	(revision 97866937a0aa90792bee5135febe4fd5ba3aed76)
++++ b/src/Aufgaben2025/Day_1_SecretEntrance.java	(date 1764668658297)
+@@ -5,7 +5,7 @@
+ import java.io.IOException;
+ import java.util.ArrayList;
+ 
+-public class SecretEntrance {
++public class Day_1_SecretEntrance {
+ 
+     public static void main(String[] args) throws IOException {
+ 
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"eeb86a9e-bddb-424c-aac7-e272e9c739d5\" name=\"Changes\" comment=\"\">\r\n      <change afterPath=\"$PROJECT_DIR$/.gitignore\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/material_theme_project_new.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/modules.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/vcs.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/AdventOfCode.iml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/Aufgaben2024/AoC_2024_Day1.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/Aufgaben2025/GiftShop.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/Aufgaben2025/SecretEntrance.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/Main.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 8\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"36Eida0bCYWGgucrsVvoHs5kSku\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;Application.SecretEntrance.executor&quot;: &quot;Run&quot;,\r\n    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\r\n    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,\r\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Sebi/IdeaProjects/AdventOfCode/src/Main.java&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.28238.7\" />\r\n        <option value=\"bundled-js-predefined-d6986cc7102b-a71380e98a7c-JavaScript-IU-252.28238.7\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"eeb86a9e-bddb-424c-aac7-e272e9c739d5\" name=\"Changes\" comment=\"\" />\r\n      <created>1764578221776</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1764578221776</updated>\r\n      <workItem from=\"1764578223207\" duration=\"18514000\" />\r\n      <workItem from=\"1764665605129\" duration=\"1828000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/Main.java</url>\r\n          <line>11</line>\r\n          <option name=\"timeStamp\" value=\"1\" />\r\n        </line-breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 97866937a0aa90792bee5135febe4fd5ba3aed76)
++++ b/.idea/workspace.xml	(date 1764668552847)
+@@ -4,19 +4,9 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="eeb86a9e-bddb-424c-aac7-e272e9c739d5" name="Changes" comment="">
+-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/AdventOfCode.iml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/Aufgaben2024/AoC_2024_Day1.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/Aufgaben2025/GiftShop.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/Aufgaben2025/SecretEntrance.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
++    <list default="true" id="eeb86a9e-bddb-424c-aac7-e272e9c739d5" name="Changes" comment="AdventOfCode_1">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Aufgaben2025/GiftShop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aufgaben2025/GiftShop.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -31,8 +21,29 @@
+     </option>
+   </component>
+   <component name="Git.Settings">
++    <option name="PUSH_TAGS">
++      <GitPushTagMode>
++        <option name="argument" value="--tags" />
++        <option name="title" value="All" />
++      </GitPushTagMode>
++    </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
++  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
++  "lastFilter": {
++    "state": "OPEN",
++    "assignee": "Sebastian-Kieser"
++  }
++}]]></component>
++  <component name="GithubPullRequestsUISettings"><![CDATA[{
++  "selectedUrlAndAccountId": {
++    "url": "https://github.com/Sebastian-Kieser/AdventOfCode.git",
++    "accountId": "0e0a4221-7805-48cf-9fef-4cc67a0bee80"
++  }
++}]]></component>
++  <component name="ProblemsViewState">
++    <option name="selectedTabId" value="CurrentFile" />
++  </component>
+   <component name="ProjectColorInfo">{
+   &quot;associatedIndex&quot;: 8
+ }</component>
+@@ -41,24 +52,32 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;Application.SecretEntrance.executor&quot;: &quot;Run&quot;,
+-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Sebi/IdeaProjects/AdventOfCode/src/Main.java&quot;,
+-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "Application.GiftShop.executor": "Run",
++    "Application.SecretEntrance.executor": "Run",
++    "ModuleVcsDetector.initialDetectionPerformed": "true",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "RunOnceActivity.git.unshallow": "true",
++    "git-widget-placeholder": "master",
++    "ignore.virus.scanning.warn.message": "true",
++    "kotlin-language-version-configured": "true",
++    "node.js.detected.package.eslint": "true",
++    "node.js.detected.package.tslint": "true",
++    "node.js.selected.package.eslint": "(autodetect)",
++    "node.js.selected.package.tslint": "(autodetect)",
++    "nodejs_package_manager_path": "npm",
++    "onboarding.tips.debug.path": "C:/Users/Sebi/IdeaProjects/AdventOfCode/src/Main.java",
++    "settings.editor.selected.configurable": "settings.sync",
++    "vue.rearranger.settings.migration": "true"
++  },
++  "keyToStringList": {
++    "ChangesTree.GroupingKeys": [
++      "module",
++      "repository"
++    ]
+   }
+-}</component>
++}]]></component>
+   <component name="SharedIndexes">
+     <attachedChunks>
+       <set>
+@@ -75,12 +94,69 @@
+       <option name="presentableId" value="Default" />
+       <updated>1764578221776</updated>
+       <workItem from="1764578223207" duration="18514000" />
+-      <workItem from="1764665605129" duration="1828000" />
++      <workItem from="1764665605129" duration="2922000" />
++    </task>
++    <task id="LOCAL-00001" summary="AdventOfCode">
++      <option name="closed" value="true" />
++      <created>1764667523275</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1764667523275</updated>
+     </task>
++    <task id="LOCAL-00002" summary="AdventOfCode">
++      <option name="closed" value="true" />
++      <created>1764667548569</created>
++      <option name="number" value="00002" />
++      <option name="presentableId" value="LOCAL-00002" />
++      <option name="project" value="LOCAL" />
++      <updated>1764667548569</updated>
++    </task>
++    <task id="LOCAL-00003" summary="AdventOfCode_1">
++      <option name="closed" value="true" />
++      <created>1764667604297</created>
++      <option name="number" value="00003" />
++      <option name="presentableId" value="LOCAL-00003" />
++      <option name="project" value="LOCAL" />
++      <updated>1764667604297</updated>
++    </task>
++    <task id="LOCAL-00004" summary="AdventOfCode_1">
++      <option name="closed" value="true" />
++      <created>1764667633179</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1764667633179</updated>
++    </task>
++    <task id="LOCAL-00005" summary="AdventOfCode_1">
++      <option name="closed" value="true" />
++      <created>1764667780007</created>
++      <option name="number" value="00005" />
++      <option name="presentableId" value="LOCAL-00005" />
++      <option name="project" value="LOCAL" />
++      <updated>1764667780007</updated>
++    </task>
++    <option name="localTasksCounter" value="6" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+     <option name="version" value="3" />
++  </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State />
++          </value>
++        </entry>
++      </map>
++    </option>
++  </component>
++  <component name="VcsManagerConfiguration">
++    <MESSAGE value="AdventOfCode" />
++    <MESSAGE value="AdventOfCode_1" />
++    <option name="LAST_COMMIT_MESSAGE" value="AdventOfCode_1" />
+   </component>
+   <component name="XDebuggerManager">
+     <breakpoint-manager>
