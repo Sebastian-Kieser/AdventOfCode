@@ -71,7 +71,7 @@ public class Day_1_SecretEntrance {
             }
 
             // Debug zum Testen:
-             System.out.println(rotation + ": " + alt + " -> " + start + " (Clicks auf 0 in diesem Zug: " + clicksToZero + ", total: " + counter + ")");
+//             System.out.println(rotation + ": " + alt + " -> " + start + " (Clicks auf 0 in diesem Zug: " + clicksToZero + ", total: " + counter + ")");
         }
 
         String hex = Integer.toHexString(counter).toUpperCase();
